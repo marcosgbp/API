@@ -16,6 +16,7 @@ const drawResults = (results)=>{
             <tr id="${results[i].name}" class"fila-table">
                 <th class="pokemon-name">${results[i].name.toUpperCase()}</th>
                 <th><img class="img-pokemon" src='${API_IMG}${indexImg}.svg'></th>
+                <th><button type="button" class="btn btn-danger" onclick="deletePokemon(this)"><i class="fas fa-trash"></i></button></th>
             </tr>
         `;
         indexImg++;
@@ -36,6 +37,10 @@ const searchPokemon = (element)=>{
             contentTable[i].parentNode.style.display="none";
         }
     }
+}
+
+const deletePokemon = (element)=>{
+    console.log(element.parentNode.parentNode.remove());
 }
 
 
